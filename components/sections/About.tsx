@@ -4,8 +4,9 @@ import { Check, Phone, Users } from "lucide-react";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { BUSINESS, TRUST_SIGNALS } from "@/lib/constants";
 
+// About: landscaping crew / professional yard work — swap for a real team photo
 const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?auto=format&fit=crop&w=900&q=80";
+  "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80";
 
 const whyUs = [
   "Locally owned and operated — born and raised in San Antonio",

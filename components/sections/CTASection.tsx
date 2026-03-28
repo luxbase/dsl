@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import { BUSINESS } from "@/lib/constants";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
+// CTA: beautiful outdoor living / patio scene — swap for a real project photo
 const CTA_BG =
-  "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80";
 
 export function CTASection() {
   const scrollToContact = () => {

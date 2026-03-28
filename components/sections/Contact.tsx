@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageSquare } from "lucide-react";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { BUSINESS } from "@/lib/constants";
+import { BUSINESS, FORMSPREE_ID } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const services = [
@@ -32,14 +32,25 @@ export function Contact() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Static site — no backend. Show success UI.
-    // Replace this with your form handler (Formspree, Netlify Forms, etc.)
     setFormState("submitting");
-    setTimeout(() => {
-      setFormState("success");
-    }, 1200);
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method:  "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body:    JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setFormState("success");
+      } else {
+        setFormState("error");
+      }
+    } catch {
+      setFormState("error");
+    }
   };
 
   const inputBase = cn(
@@ -277,6 +288,12 @@ export function Contact() {
                   )}
                 </button>
 
+                {formState === "error" && (
+                  <p className="text-xs text-center text-red-500 font-medium">
+                    Something went wrong. Please call us directly at{" "}
+                    <a href={BUSINESS.phoneHref} className="underline">{BUSINESS.phone}</a>.
+                  </p>
+                )}
                 <p className="text-xs text-center text-[rgb(var(--text-muted))]">
                   By submitting, you agree to be contacted about your estimate. We never share your info.
                 </p>

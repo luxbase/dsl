@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532d"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <!-- Rounded square background -->
+  <rect width="32" height="32" rx="7" fill="url(#bg)"/>
+  <!-- Leaf / plant icon -->
+  <g transform="translate(6, 5)" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Leaf shape -->
+    <path d="M11 2 C11 2, 18 3, 18 9 C18 14, 13 16, 10 18"/>
+    <path d="M10 18 C7 14, 2 11, 2 6 C2 3, 5 1.5, 8 2 C10 2.3, 11 2, 11 2"/>
+    <!-- Stem -->
+    <line x1="10" y1="18" x2="10" y2="22"/>
+  </g>
+</svg>

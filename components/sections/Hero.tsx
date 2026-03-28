@@ -6,8 +6,9 @@ import { motion } from "framer-motion";
 import { BUSINESS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
+// Hero: wide-angle manicured residential lawn — swap for a real San Antonio job photo
 const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=85";
+  "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1920&q=85";
 
 const trustBadges = [
   { icon: Star,   label: "5-Star Rated"        },
