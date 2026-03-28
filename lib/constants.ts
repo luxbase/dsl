@@ -4,7 +4,7 @@
 // 2. Enter the email where you want leads delivered
 // 3. Click "Get Access Key" — they'll email it to you instantly
 // 4. Paste it below
-export const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // ← paste key here
+export const WEB3FORMS_KEY = "20ee1b80-83e8-4a65-b9dc-b5ceddb9872e";
 
 // ─── Business Info ───────────────────────────────────────────────────────────
 // UPDATE THESE before going live
