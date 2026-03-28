@@ -13,7 +13,7 @@ export const BUSINESS = {
   tagline:     "Transforming San Antonio Yards Into Living Works of Art",
   phone:       "(210) 555-0180",           // ← Replace with real number
   phoneHref:   "tel:+12105550180",         // ← Replace with real number
-  email:       "contact@daniellandscaping.com",
+  email:       "saldivardanny@gmail.com",
   address:     "San Antonio, Texas",
   serviceArea: "Serving Greater San Antonio & surrounding areas",
   license:     "Licensed & Insured",
