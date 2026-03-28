@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock, Send, CheckCircle, MessageSquare } from "lucide-react";
 import { AnimateIn } from "@/components/ui/AnimateIn";
-import { BUSINESS, FORMSPREE_ID } from "@/lib/constants";
+import { BUSINESS, WEB3FORMS_KEY } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
 const services = [
@@ -37,13 +37,19 @@ export function Contact() {
     setFormState("submitting");
 
     try {
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method:  "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body:    JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject:    `New estimate request from ${formData.name} — Daniel Saldivar Landscaping`,
+          from_name:  "Daniel Saldivar Landscaping Website",
+          ...formData,
+        }),
       });
 
-      if (res.ok) {
+      const json = await res.json();
+      if (json.success) {
         setFormState("success");
       } else {
         setFormState("error");

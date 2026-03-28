@@ -1,8 +1,10 @@
-// ─── Form (Formspree) ────────────────────────────────────────────────────────
-// 1. Go to https://formspree.io → sign up free
-// 2. Create a new form → copy the ID (e.g. "xpwzabcd")
-// 3. Replace the placeholder below with your real ID
-export const FORMSPREE_ID = "YOUR_FORMSPREE_ID"; // ← replace this
+// ─── Form (Web3Forms) ────────────────────────────────────────────────────────
+// No account needed — takes 30 seconds:
+// 1. Go to https://web3forms.com
+// 2. Enter the email where you want leads delivered
+// 3. Click "Get Access Key" — they'll email it to you instantly
+// 4. Paste it below
+export const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY"; // ← paste key here
 
 // ─── Business Info ───────────────────────────────────────────────────────────
 // UPDATE THESE before going live
