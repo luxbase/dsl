@@ -37,19 +37,23 @@ export function Contact() {
     setFormState("submitting");
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method:  "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject:    `New estimate request from ${formData.name} — Daniel Saldivar Landscaping`,
-          from_name:  "Daniel Saldivar Landscaping Website",
-          ...formData,
-        }),
-      });
+      const payload = new FormData();
+      payload.append("access_key", WEB3FORMS_KEY);
+      payload.append("subject", `New estimate request from ${formData.name} — Daniel Saldivar Landscaping`);
+      payload.append("from_name", "Daniel Saldivar Landscaping Website");
+      payload.append("name",    formData.name);
+      payload.append("phone",   formData.phone);
+      payload.append("email",   formData.email);
+      payload.append("service", formData.service);
+      payload.append("message", formData.message);
 
+      const res  = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body:   payload,
+      });
       const json = await res.json();
-      if (json.success) {
+
+      if (res.ok && json.success) {
         setFormState("success");
       } else {
         setFormState("error");
