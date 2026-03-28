@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ──────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Light theme */
+    --bg-primary:      255 255 255;
+    --bg-secondary:    248 250 248;
+    --bg-card:         255 255 255;
+    --bg-surface:      240 247 240;
+
+    --text-primary:    13 31 18;
+    --text-secondary:  75 85 99;
+    --text-muted:      107 114 128;
+
+    --border:          229 231 235;
+    --border-strong:   209 213 219;
+
+    --accent:          22 163 74;
+    --accent-light:    74 222 128;
+    --accent-glow:     74 222 128 / 0.3;
+
+    --shadow-color:    0 0 0;
+
+    color-scheme: light;
+  }
+
+  .dark {
+    /* Dark theme — luxury deep green */
+    --bg-primary:      7 18 9;
+    --bg-secondary:    11 25 13;
+    --bg-card:         15 33 18;
+    --bg-surface:      20 44 24;
+
+    --text-primary:    240 253 244;
+    --text-secondary:  187 247 208;
+    --text-muted:      134 239 172;
+
+    --border:          27 58 32;
+    --border-strong:   38 82 44;
+
+    --accent:          74 222 128;
+    --accent-light:    134 239 172;
+    --accent-glow:     74 222 128 / 0.2;
+
+    --shadow-color:    0 0 0;
+
+    color-scheme: dark;
+  }
+}
+
+/* ─── Base Styles ────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-[rgb(var(--border))];
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-[rgb(var(--bg-primary))] text-[rgb(var(--text-primary))];
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: rgb(var(--accent) / 0.2);
+    color: rgb(var(--text-primary));
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 2px;
+  }
+}
+
+/* ─── Component Utilities ────────────────────────────────────────────────── */
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .heading-display {
+    font-family: var(--font-playfair);
+    @apply tracking-tight leading-tight;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(
+      135deg,
+      rgb(var(--accent)) 0%,
+      rgb(var(--accent-light)) 100%
+    );
+  }
+
+  /* Card base */
+  .card-base {
+    @apply rounded-2xl bg-[rgb(var(--bg-card))] border border-[rgb(var(--border))];
+    box-shadow: 0 4px 24px -4px rgb(var(--shadow-color) / 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  }
+
+  .card-base:hover {
+    box-shadow: 0 12px 40px -8px rgb(var(--shadow-color) / 0.15);
+    @apply border-[rgb(var(--accent)/0.4)] -translate-y-0.5;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3.5 rounded-xl font-semibold text-base
+           bg-forest-600 text-white
+           hover:bg-forest-700 active:bg-forest-800
+           dark:bg-forest-500 dark:hover:bg-forest-400 dark:text-obsidian-950
+           transition-all duration-200;
+    box-shadow: 0 2px 12px rgb(22 163 74 / 0.35);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 4px 20px rgb(22 163 74 / 0.5);
+    transform: translateY(-1px);
+  }
+
+  /* Button outline */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2
+           px-6 py-3.5 rounded-xl font-semibold text-base
+           border-2 border-[rgb(var(--accent))] text-[rgb(var(--accent))]
+           hover:bg-[rgb(var(--accent)/0.1)]
+           transition-all duration-200;
+  }
+
+  /* Phone CTA */
+  .btn-call {
+    @apply inline-flex items-center justify-center gap-2
+           px-7 py-4 rounded-xl font-bold text-lg
+           bg-forest-600 text-white
+           hover:bg-forest-700
+           dark:bg-forest-400 dark:text-obsidian-950 dark:hover:bg-forest-300
+           transition-all duration-200;
+    box-shadow: 0 4px 24px rgb(22 163 74 / 0.4);
+  }
+
+  .btn-call:hover {
+    box-shadow: 0 6px 30px rgb(22 163 74 / 0.6);
+    transform: translateY(-2px);
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold;
+  }
+
+  .badge-green {
+    @apply badge bg-forest-100 text-forest-800 dark:bg-forest-900/50 dark:text-forest-300;
+  }
+
+  /* Section label */
+  .section-label {
+    @apply badge-green mb-4 uppercase tracking-widest;
+  }
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--bg-secondary));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--border-strong));
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--accent));
+  }
+}
+
+/* ─── Hero overlay ───────────────────────────────────────────────────────── */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+}
+
+/* ─── Gallery hover ──────────────────────────────────────────────────────── */
+.gallery-item {
+  @apply relative overflow-hidden rounded-2xl cursor-pointer;
+}
+
+.gallery-item img {
+  @apply w-full h-full object-cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-item-overlay {
+  @apply absolute inset-0 flex items-end p-4;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  opacity: 1;
+}
+
+/* ─── Testimonial card ───────────────────────────────────────────────────── */
+.testimonial-quote::before {
+  content: "\201C";
+  @apply text-5xl leading-none text-[rgb(var(--accent))] font-display;
+  display: block;
+  margin-bottom: -8px;
+}
+
+/* ─── Noise texture overlay (subtle luxury feel) ─────────────────────────── */
+.noise-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.04;
+}
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgb(var(--accent) / 0.15) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* ─── Stat counter ───────────────────────────────────────────────────────── */
+.stat-value {
+  font-family: var(--font-playfair);
+  @apply text-5xl font-bold tracking-tight text-gradient;
+}
