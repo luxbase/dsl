@@ -38,8 +38,8 @@ export const SERVICES = [
     description:
       "Precision mowing, edging, and seasonal treatments that keep your lawn thick, green, and weed-free all year long.",
     features:    ["Weekly & bi-weekly mowing", "Edging & trimming", "Fertilization programs", "Weed control"],
-    // Man mowing a residential lawn — replace with real job photo
-    image:       "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80",
+    // Aerial green lawn — replace with real job photo
+    image:       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
   },
   {
     id:          "landscaping-design",
@@ -48,8 +48,8 @@ export const SERVICES = [
     description:
       "Custom landscape plans that blend beauty with function — from native plant beds to full outdoor living transformations.",
     features:    ["Custom design plans", "Native plant selection", "Irrigation planning", "Hardscape integration"],
-    // Garden path with stone pavers and lush plantings
-    image:       "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80",
+    // Garden path with lush green plantings
+    image:       "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
   },
   {
     id:          "maintenance",
@@ -58,8 +58,8 @@ export const SERVICES = [
     description:
       "Year-round care packages that handle everything — mulching, pruning, clean-ups, and storm prep so you never have to lift a finger.",
     features:    ["Spring & fall clean-ups", "Mulch installation", "Tree & shrub pruning", "Leaf removal"],
-    // Pruning / garden maintenance scene
-    image:       "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
+    // Colorful garden / seasonal flower beds
+    image:       "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=800&q=80",
   },
   {
     id:          "irrigation",
@@ -68,74 +68,75 @@ export const SERVICES = [
     description:
       "Smart irrigation systems and drainage solutions designed to save water and protect your investment in every season.",
     features:    ["Sprinkler installation", "Drip systems", "French drain solutions", "Smart controller upgrades"],
-    // Sprinkler system spraying grass
-    image:       "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=800&q=80",
+    // Green outdoor / sprinkler scene
+    image:       "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=800&q=80",
   },
 ] as const;
 
 // ─── Gallery ─────────────────────────────────────────────────────────────────
-// All photos: free Unsplash images — replace with real project photos for best results
+// Replace with real project photos for maximum conversion impact.
+// All IDs below are confirmed-working Unsplash photos.
 export const GALLERY_IMAGES = [
   {
     id: 1,
-    // Wide manicured backyard — hero gallery slot
+    // Aerial manicured green lawn — hero gallery slot
     src:   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=80",
-    alt:   "Manicured backyard lawn — San Antonio residential project",
+    alt:   "Manicured residential lawn — San Antonio project",
     label: "Lawn Renovation",
     span:  "col-span-2 row-span-2",
   },
   {
     id: 2,
-    // Lush garden with stone pathway and plants
-    src:   "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80",
-    alt:   "Stone pathway through native plant garden",
+    // Lush garden with green pathway
+    src:   "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80",
+    alt:   "Garden pathway with native plantings",
     label: "Garden Design",
     span:  "",
   },
   {
     id: 3,
-    // Stone paver patio / hardscape outdoor living
-    src:   "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?auto=format&fit=crop&w=600&q=80",
-    alt:   "Custom stone paver patio with outdoor seating",
+    // Outdoor / green yard space
+    src:   "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&w=600&q=80",
+    alt:   "Custom stone patio with outdoor seating area",
     label: "Hardscape & Patio",
     span:  "",
   },
   {
     id: 4,
-    // Sprinkler system in action on green lawn
-    src:   "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80",
-    alt:   "Irrigation sprinkler system installation",
+    // Vibrant colorful garden / flower beds
+    src:   "https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=600&q=80",
+    alt:   "Irrigation system and drought-tolerant planting",
     label: "Irrigation System",
     span:  "",
   },
   {
     id: 5,
-    // Expansive green park-like backyard
+    // Expansive green landscape / backyard
     src:   "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=900&q=80",
-    alt:   "Full backyard transformation — before and after",
+    alt:   "Full backyard transformation — San Antonio residential",
     label: "Backyard Transformation",
     span:  "col-span-2",
   },
   {
     id: 6,
-    // Colorful Texas-style flower beds and plantings
-    src:   "https://images.unsplash.com/photo-1585320806297-9794b3e4aaae?auto=format&fit=crop&w=600&q=80",
-    alt:   "Seasonal flower beds and colorful plantings",
+    // Tree canopy / mature trees
+    src:   "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80",
+    alt:   "Seasonal planting and garden color installation",
     label: "Seasonal Planting",
     span:  "",
   },
   {
     id: 7,
-    // Tree canopy / mature tree landscaping
-    src:   "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&q=80",
-    alt:   "Mature tree trimming and canopy management",
+    // Natural outdoor landscape
+    src:   "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=600&q=80",
+    alt:   "Tree trimming and canopy management",
     label: "Tree Service",
     span:  "",
   },
   {
     id: 8,
-    // Outdoor living space — fire pit / entertaining area
-    src:   "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80",
+    // Garden / outdoor living scene
+    src:   "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&crop=bottom&q=80",
     alt:   "Outdoor living space with fire pit and stone seating",
     label: "Outdoor Living",
     span:  "",

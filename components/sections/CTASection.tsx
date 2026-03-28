@@ -1,13 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { Phone, Calendar, Leaf } from "lucide-react";
 import { motion } from "framer-motion";
 import { BUSINESS } from "@/lib/constants";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 
-// CTA: beautiful outdoor living / patio scene — swap for a real project photo
+// CTA: expansive green landscape — swap for a real project photo
 const CTA_BG =
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1920&q=80";
+  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80";
 
 export function CTASection() {
   const scrollToContact = () => {
@@ -18,11 +19,12 @@ export function CTASection() {
     <section className="relative py-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src={CTA_BG}
           alt="Beautiful San Antonio lawn"
-          className="w-full h-full object-cover"
-          loading="lazy"
+          fill
+          className="object-cover"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-forest-950/90 via-forest-900/80 to-forest-950/90" />
         <div className="absolute inset-0 dark:bg-black/30" />

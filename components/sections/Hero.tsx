@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Phone, ChevronDown, Star, Shield, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import { BUSINESS } from "@/lib/constants";
@@ -48,15 +49,17 @@ export function Hero() {
         {/* Placeholder bg while image loads */}
         <div className="absolute inset-0 bg-obsidian-900" />
 
-        <img
+        <Image
           src={HERO_IMAGE}
           alt="Lush professionally maintained lawn in San Antonio Texas"
+          fill
+          priority
           className={cn(
-            "w-full h-full object-cover transition-opacity duration-1000",
+            "object-cover transition-opacity duration-1000",
             loaded ? "opacity-100" : "opacity-0"
           )}
+          sizes="100vw"
           onLoad={() => setLoaded(true)}
-          fetchPriority="high"
         />
 
         {/* Gradient overlay */}

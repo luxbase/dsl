@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { X, ZoomIn, Images } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GALLERY_IMAGES } from "@/lib/constants";
@@ -49,11 +50,12 @@ export function Gallery() {
                 className={cn("gallery-item", img.span)}
                 onClick={() => openLightbox(img)}
               >
-                <img
+                <Image
                   src={img.src}
                   alt={img.alt}
-                  className="w-full h-full object-cover"
-                  loading="lazy"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
 
                 {/* Hover overlay */}
@@ -116,8 +118,9 @@ export function Gallery() {
               className="relative max-w-5xl max-h-[85vh] rounded-2xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={lightbox.src.replace("w=900", "w=1400")}
+                src={lightbox.src.replace("w=900", "w=1400").replace("w=600", "w=1400")}
                 alt={lightbox.alt}
                 className="max-w-full max-h-[80vh] object-contain"
               />

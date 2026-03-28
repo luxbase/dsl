@@ -1,12 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { Check, Phone, Users } from "lucide-react";
 import { AnimateIn } from "@/components/ui/AnimateIn";
 import { BUSINESS, TRUST_SIGNALS } from "@/lib/constants";
 
-// About: landscaping crew / professional yard work — swap for a real team photo
+// About: lush outdoor landscape — swap for a real team/job-site photo
 const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=900&q=80";
+  "https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=900&q=80";
 
 const whyUs = [
   "Locally owned and operated — born and raised in San Antonio",
@@ -28,11 +29,12 @@ export function About() {
             <div className="relative">
               {/* Main image */}
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-2xl">
-                <img
+                <Image
                   src={ABOUT_IMAGE}
-                  alt="Daniel Saldiver team working on a San Antonio landscape project"
-                  className="w-full h-full object-cover"
-                  loading="lazy"
+                  alt="Daniel Saldivar team working on a San Antonio landscape project"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-forest-900/20 to-transparent" />
               </div>
