@@ -4,6 +4,8 @@ import { Providers } from "./providers";
 import "./globals.css";
 import { BUSINESS } from "@/lib/constants";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -49,8 +51,8 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon:  "/favicon.svg",
-    apple: "/favicon.svg",
+    icon:  `${basePath}/favicon.svg`,
+    apple: `${basePath}/favicon.svg`,
   },
 };
 
